@@ -42,14 +42,6 @@ pen.goto(0, 260)
 pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 18, "bold"))
 
 # Functions
-def go_up():
-    if head.direction != "down":
-        head.direction = "up"
-
-def go_down():
-    if head.direction != "up":
-        head.direction = "down"
-
 def go_left():
     if head.direction != "right":
         head.direction = "left"
@@ -59,12 +51,7 @@ def go_right():
         head.direction = "right"
 
 def move():
-    if head.direction == "up":
-        y = head.ycor()
-        head.sety(y + 20)
-    if head.direction == "down":
-        y = head.ycor()
-        head.sety(y - 20)
+    
     if head.direction == "left":
         x = head.xcor()
         head.setx(x - 20)
@@ -74,8 +61,6 @@ def move():
 
 # Keyboard bindings
 win.listen()
-win.onkeypress(go_up, "Up")
-win.onkeypress(go_down, "Down")
 win.onkeypress(go_left, "Left")
 win.onkeypress(go_right, "Right")
 
